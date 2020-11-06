@@ -7,5 +7,15 @@
 </ul>
 
 <button (click)="onClick()"> Cliquer Ici </button>
-<input  (keyup)="onKey($event)">
+
+<p>play with keyup</p>
+<input (keyup)="onKey($event)">
 <p>{{ value }}</p>
+
+<p>play with #box with keyup</p>
+<input #box (keyup)="1">
+<p>{{ box.value }}</p>
+
+<p>play with #box1 with keyup.enter and blur (focus loss)</p>
+<input #box1 (keyup.enter)="values=box1.value" (blur)="values=box1.value">
+<p>{{ values }}</p>
