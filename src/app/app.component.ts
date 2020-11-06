@@ -1,11 +1,11 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { Pokemon } from "./pokemon";
 import { POKEMONS } from "./mock-pokemons";
 
 @Component({
   selector: "pokemon-app",
-  templateUrl: "./app/app.component.html",
+  templateUrl: "app/app.component.html",
   // template: `<h1> Liste de Pokemons </h1>`
 })
 export class AppComponent implements OnInit {
