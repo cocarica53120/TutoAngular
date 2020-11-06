@@ -1,3 +1,7 @@
+<div>
+  <button (click)="goBack()"> Go Back </button>
+</div>
+
 <div *ngIf="pokemon" class="row"></div>
 <div class="col s12 m8 offset-m2">
   <h2 class="header center">{{ pokemon.name }}</h2>
@@ -8,8 +12,4 @@
   </div>
 </div>
 
-<h4 *ngIf="!pokemon" class="center">No pokemon!!!</h4>
-
-<div>
-    <button (click)="goBack()"> Go Back </button>
-</div>
+<h4 *ngIf="!pokemon" class="center">No pokemon with {{ idAsked }} found!!!</h4>
