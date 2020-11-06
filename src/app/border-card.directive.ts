@@ -1,18 +1,25 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({ selector: '[pokemonBorderCard]' })
 export class BorderCardDirective {
+
+    private initialColor = '#f5f5f5';
+    private defaultColor = '#009688';
+    private defaultHeight = 180;
+
     constructor(private el: ElementRef) {
-        this.setBorder('#f5f5f5');
-        this.setHeight(180);
+        this.setBorder(this.initialColor);
+        this.setHeight(this.defaultHeight);
      }
 
+     @Input('pokemonBorderCard') borderColor: string;// alias
+
      @HostListener('mouseenter') onMouseEnter() {
-        this.setBorder('#009688');
+        this.setBorder(this.borderColor || this.defaultColor);
      }
 
      @HostListener('mouseleave') onMouseLeave() {
-        this.setBorder('#f5f5f5');
+        this.setBorder(this.initialColor);
      }
 
      private setBorder(color: string) {
