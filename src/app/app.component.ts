@@ -1,27 +1,35 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from "@angular/core";
 
-import { Pokemon } from './pokemon';
-import { POKEMONS } from './mock-pokemons';
+import { Pokemon } from "./pokemon";
+import { POKEMONS } from "./mock-pokemons";
 
 @Component({
-	selector: 'pokemon-app',
-	// templateUrl: './app/app.component.html'
-	template: `<h1> Liste de Pokemons </h1>`
+  selector: "pokemon-app",
+  templateUrl: "./app/app.component.html",
+  // template: `<h1> Liste de Pokemons </h1>`
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
+  private pokemons: Pokemon[];
+  private title: string = "Pokemons";
+  private who: string = "Moi";
+  private value: string = "Value to update";
 
-	private pokemons: Pokemon[];
+  ngOnInit() {
+    this.pokemons = POKEMONS;
+    console.log("ngOnInit", this);
+  }
 
-	ngOnInit() {
-		this.pokemons = POKEMONS;
-		console.log('ngOnInit', this);
-	}
+  onClick() {
+    console.log("onClick");
+  }
 
-	selectPokemon(pokemon: Pokemon) {
-		alert('Vous avez clické sur ' + pokemon.name);
-	}
+  onKey(event: KeyboardEvent) {
+	console.log("onKey", event);
+	this.value = (<HTMLInputElement>event.target).value;
+  }
 
-	ngOnDestroy() {
-		console.log('ngOnDestroy', this);
-	}
- }
+  selectPokemon(pokemon: Pokemon) {
+    alert("Vous avez clické sur " + pokemon.name);
+  }
+
+}
