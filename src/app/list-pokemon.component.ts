@@ -1,0 +1,30 @@
+import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
+
+import { Pokemon } from "./pokemon";
+import { POKEMONS } from "./mock-pokemons";
+
+@Component({
+  selector: "list-pokemon",
+  templateUrl: "app/list-pokemon.component.html",
+})
+export class ListPokemonComponent implements OnInit {
+  
+  private pokemons: Pokemon[];
+  private title: string = "Pokemons";
+  private who: string = "Moi";
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.pokemons = POKEMONS;
+    console.log("ngOnInit", this);
+  }
+
+  selectPokemon(pokemon: Pokemon) {
+    console.log("Vous avez clické sur " + pokemon.name);
+    const link = ['/pokemon', pokemon.id];
+    this.router.navigate(link);
+  }
+
+}
