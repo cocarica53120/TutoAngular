@@ -8,9 +8,12 @@
         </div>
         <div class="card-stacked">
           <div class="card-content">
-            <p>
-              <small>{{ pokemon.name }}</small>
-            </p>
+            <p><small>name: {{ pokemon.name }}</small></p>
+            <!-- <p><small>id: {{ pokemon.id }}</small></p> -->
+            <!-- <p><small>hp: {{ pokemon.hp }}</small></p>
+            <p><small>cp: {{ pokemon.cp }}</small></p> -->
+            <p><small>created(lower): {{ pokemon.created | date | lowercase }}</small></p>
+            <p><small>created(format): {{ pokemon.created | date:"dd/MM/yyyy"}}</small></p>
           </div>
         </div>
       </div>
