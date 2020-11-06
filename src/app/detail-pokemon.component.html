@@ -1,5 +1,5 @@
 <div>
-  <button (click)="goBack()"> Go Back </button>
+  <button (click)="goBack()">Go Back</button>
 </div>
 
 <div *ngIf="pokemon" class="row"></div>
@@ -8,6 +8,9 @@
   <div class="card horizontal hoverable">
     <div class="card-image">
       <img [src]="pokemon.picture" />
+      <p>id <span class="title">{{ pokemon.id }}</span></p>
+      <p>hp <span class="title">{{ pokemon.hp }}</span></p>
+      <p>cp <span class="title">{{ pokemon.cp }}</span></p>
     </div>
   </div>
 </div>
