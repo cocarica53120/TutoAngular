@@ -1,21 +1,3 @@
 <h1> Liste de {{title}} à {{ who }} </h1>
 
-<ul>
-  <li>Bulbizzare</li>
-  <li>Salameche</li>
-  <li>Carapuce</li>
-</ul>
-
-<button (click)="onClick()"> Cliquer Ici </button>
-
-<p>play with keyup</p>
-<input (keyup)="onKey($event)">
-<p>{{ value }}</p>
-
-<p>play with #box with keyup</p>
-<input #box (keyup)="1">
-<p>{{ box.value }}</p>
-
-<p>play with #box1 with keyup.enter and blur (focus loss)</p>
-<input #box1 (keyup.enter)="values=box1.value" (blur)="values=box1.value">
-<p>{{ values }}</p>
+<p *ngIf="age >= 18">Ceci est un message destiné aux personnes majeures.</p>

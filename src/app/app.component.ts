@@ -9,23 +9,15 @@ import { POKEMONS } from "./mock-pokemons";
   // template: `<h1> Liste de Pokemons </h1>`
 })
 export class AppComponent implements OnInit {
+  
   private pokemons: Pokemon[];
   private title: string = "Pokemons";
   private who: string = "Moi";
-  private value: string = "Value to update";
+  private age = 19;
 
   ngOnInit() {
     this.pokemons = POKEMONS;
     console.log("ngOnInit", this);
-  }
-
-  onClick() {
-    console.log("onClick");
-  }
-
-  onKey(event: KeyboardEvent) {
-	console.log("onKey", event);
-	this.value = `the value is ${(<HTMLInputElement>event.target).value}`;
   }
 
   selectPokemon(pokemon: Pokemon) {
