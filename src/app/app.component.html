@@ -1,5 +1,15 @@
-<h1> Liste de {{title}} à {{ who }} </h1>
+<h1 class="center">{{ title }} à {{ who }}</h1>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let pokemon of pokemons" class="col s6 m4">
+      <div class="card-image">
+        <img [src]="pokemon.picture">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p><small>{{ pokemon.name }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<ul>
-  <li *ngFor="let pokemon of pokemons"> {{ pokemon.name }} </li>
-</ul>
