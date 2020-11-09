@@ -1,0 +1,7 @@
+
+
+<h3>{{master}} controls {{heroes.length}} heroes</h3>
+
+<div *ngFor="let hero of heroes">
+    <app-hero-child [hero]="hero" [master]="master"></app-hero-child>
+</div>

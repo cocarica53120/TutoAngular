@@ -1,6 +1,42 @@
-<nav>
+<!-- <nav>
   <div class="nav-wrapper teal">
     <a href="#" class="brand-logo center">pokemon-app</a>
   </div>
+</nav> -->
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="" class="brand-logo right">Menu</a>
+    <ul class="left">
+      <li>
+        <a
+          class="waves-effect waves-light btn"
+          (click)="onClickPokemons($event)"
+          >Pokemons</a
+        >
+      </li>
+      <li>
+        <a class="waves-effect waves-light btn" (click)="onClickHeroes($event)"
+          >Heroes<i class="material-icons right">cloud</i></a
+        >
+      </li>
+    </ul>
+  </div>
 </nav>
+
+<div class="container">
+  <div class="card">
+    <div class="card-image">
+      <h6>
+        My Experiment => countdownMaster: {{ countdownMaster }}; value:
+        {{ value }}
+      </h6>
+      <app-template-favorite-color
+        color="blue"
+        (countdown)="onCountdown($event)"
+      ></app-template-favorite-color>
+    </div>
+  </div>
+</div>
+
 <router-outlet></router-outlet>
